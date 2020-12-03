@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/nimajalali/go-force/forcejson"
+	"github.com/Iliyan123123123/go-force/forcejson"
 )
 
 const (
