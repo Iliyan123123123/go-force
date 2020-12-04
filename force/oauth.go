@@ -56,7 +56,6 @@ func (oauth *forceOauth) Authenticate() error {
 	payload := url.Values{
 		"grant_type":    {grantType},
 		"client_id":     {oauth.clientId},
-		"client_secret": {oauth.clientSecret},
 		"username":      {oauth.userName},
 		"password":      {fmt.Sprintf("%v%v", oauth.password, oauth.securityToken)},
 	}
@@ -68,7 +67,6 @@ func (oauth *forceOauth) AuthenticateWithRefreshToken() error {
 	payload := url.Values{
 		"grant_type":    {grantTypeRefreshToken},
 		"client_id":     {oauth.clientId},
-		"client_secret": {oauth.clientSecret},
 		"refresh_token": {oauth.refreshToken},
 	}
 

@@ -225,7 +225,6 @@ func (forceApi *ForceApi) RefreshToken() error {
 		"grant_type":    "refresh_token",
 		"refresh_token": forceApi.oauth.refreshToken,
 		"client_id":     forceApi.oauth.clientId,
-		"client_secret": forceApi.oauth.clientSecret,
 	}
 
 	err := forceApi.Post("/services/oauth2/token", nil, payload, res)
