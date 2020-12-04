@@ -26,7 +26,6 @@ type forceOauth struct {
 	Signature   string `json:"signature"`
 
 	clientId      string
-	clientSecret  string
 	refreshToken  string
 	userName      string
 	password      string

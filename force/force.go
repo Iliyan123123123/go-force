@@ -18,11 +18,10 @@ const (
 	testEnvironment   = "production"
 )
 
-func Create(version, clientId, clientSecret, userName, password, securityToken,
+func Create(version, clientId, userName, password, securityToken,
 	environment string) (*ForceApi, error) {
 	oauth := &forceOauth{
 		clientId:      clientId,
-		clientSecret:  clientSecret,
 		userName:      userName,
 		password:      password,
 		securityToken: securityToken,
@@ -89,10 +88,9 @@ func CreateWithAccessToken(version, clientId, accessToken, instanceUrl string) (
 	return forceApi, nil
 }
 
-func CreateWithRefreshToken(version, clientId, clientSecret, refreshToken, environment string) (*ForceApi, error) {
+func CreateWithRefreshToken(version, clientId, refreshToken, environment string) (*ForceApi, error) {
 	oauth := &forceOauth{
 		clientId:     clientId,
-		clientSecret: clientSecret,
 		refreshToken: refreshToken,
 		environment:  environment,
 	}
@@ -125,7 +123,7 @@ func CreateWithRefreshToken(version, clientId, clientSecret, refreshToken, envir
 
 // Used when running tests.
 func createTest() *ForceApi {
-	forceApi, err := Create(testVersion, testClientId, testClientSecret, testUserName, testPassword, testSecurityToken, testEnvironment)
+	forceApi, err := Create(testVersion, testClientId, testUserName, testPassword, testSecurityToken, testEnvironment)
 	if err != nil {
 		fmt.Printf("Unable to create ForceApi for test: %v", err)
 		os.Exit(1)

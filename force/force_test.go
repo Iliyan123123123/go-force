@@ -11,7 +11,6 @@ func TestCreateWithAccessToken(t *testing.T) {
 	// Manually grab an OAuth token, so that we can pass it into CreateWithAccessToken
 	oauth := &forceOauth{
 		clientId:      testClientId,
-		clientSecret:  testClientSecret,
 		userName:      testUserName,
 		password:      testPassword,
 		securityToken: testSecurityToken,
