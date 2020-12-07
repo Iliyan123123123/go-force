@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-SObject//SObjectResponse received from force.com API after insert of an sobject.
+//SObjectResponse received from force.com API after insert of an sobject.
 type SObjectResponse struct {
 	ID      string    `force:"id,omitempty"`
 	Errors  ApiErrors `force:"error,omitempty"` //TODO: Not sure if ApiErrors is the right object
